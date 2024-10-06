@@ -49,6 +49,8 @@ from COMMON.Dates import convertJulianDay2YearMonthDay
 from COMMON.Dates import convertYearMonthDay2Doy
 from Corrections import runCorrectMeas
 
+
+import warnings
 #----------------------------------------------------------------------
 # INTERNAL FUNCTIONS
 #----------------------------------------------------------------------
@@ -64,6 +66,19 @@ def displayUsage():
 if len(sys.argv) != 2:
     displayUsage()
     sys.exit()
+
+
+
+# ------------------------------------------------------------
+
+
+warnings.simplefilter(action='ignore', category=FutureWarning)
+
+
+
+# ------------------------------------------------------------
+
+
 
 # Extract the arguments
 Scen = sys.argv[1]
